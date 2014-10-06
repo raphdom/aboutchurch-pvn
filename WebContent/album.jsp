@@ -10,6 +10,9 @@
 	<script type="text/javascript" src="${pageContext.request.contextPath}/js/spinners.min.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/js/lightview.js"></script>
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/lightview.css"/>
+	
+	<c:set var="req" value="${pageContext.request}" />
+    <c:set var="baseURL" value="${req.scheme}://${req.serverName}:${req.serverPort}${req.contextPath}" />
 	<body>
 		<jsp:include page="fragments/header.jsp" />
 		<jsp:include page="fragments/path.jsp" />
@@ -20,7 +23,7 @@
 					    <c:forEach var="item" items="${album.items}">
 					    	<div class="pvn-galery-item">
 					    		<div class="image">
-					    			<a href="${pageContext.request.contextPath}/getThumb.action?id=<c:out value='${item.id}'/>&dataType=10" 
+					    			<a href="${baseURL}/getThumb.action?id=<c:out value='${item.id}'/>&dataType=10" 
 										class="lightview"
 										data-lightview-group ='album'
 										data-lightview-title ='<c:out value="${item.title}"/>' 
