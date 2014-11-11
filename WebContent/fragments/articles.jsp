@@ -19,7 +19,7 @@
 				<div class="article-header-title"><c:out value='${article.title}'/></div>
 			</a>
 		</div>
-		<div class="article-intro"><c:out value='${article.introarticle}'/></div>
+		<div class="article-intro"><c:out value='${article.introarticle}' escapeXml="false"/></div>
 		<a href="article.action?id=<c:out value='${article.id}'/>" class="article-readmore">leia mais</a>
 	</div>
 </c:forEach>

@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<jsp:include page="fragments/head.jsp" />
@@ -19,17 +20,25 @@
 		<jsp:include page="fragments/path.jsp" />
 		<div id="pvn-article">
 			<c:if test="${not empty category.thumbId}">
-				<div class="image"><img src="getThumb.action?id=<c:out value='${category.thumbId}'/>&dataType=5"  alt=""></div>
+				<div class="image"><img src="getThumb.action?id=<c:out value='${category.thumbId}'/>&dataType=6&width=250&height=250&exactlySize=false"  alt=""></div>
 			</c:if>
 			<div class="titulo"><c:out value="${category.text}"/></div>
-			<div class="cont_artigo"><c:out value="${category.description}"/></div>
+			<div class="cont_artigo"><c:out value="${category.description}" escapeXml="false"/></div>
 			<div id="pvn-main-content-agenda-horizontal">
 				<%-- <jsp:include page="fragments/agendaHorizontal.jsp" /> --%>
 			</div>
 			<div id="pvn-main-content-articles-category">
 				<jsp:include page="fragments/articles.jsp" />
 			</div>
-			<jsp:include page="fragments/albuns.jsp" />
+			
+			<c:choose>
+			 <c:when test="${empty albuns}">
+			 </c:when>
+			 <c:otherwise>
+			      <jsp:include page="fragments/albuns.jsp" />
+			 </c:otherwise>
+			</c:choose>
+			
 		</div>
 		
 		<jsp:include page="fragments/footer.jsp" />

@@ -16,7 +16,7 @@
 			 </c:otherwise>
 			</c:choose>
 			<div class="titulo"><c:out value="${article.title}"/></div>
-			<div class="cont_artigo"><c:out value="${article.article}"/></div>
+			<div class="cont_artigo"><c:out value="${article.article}" escapeXml="false"/></div>
 			<div class="info">
 				<div class="publishedlabel">Publicado em:</div><div class="published-date"><c:out value="${article.publishUp}"/></div>
 				<div class="publishedlabel">Escrito por:</div><div class="write"><c:out value="${article.author}"/></div>

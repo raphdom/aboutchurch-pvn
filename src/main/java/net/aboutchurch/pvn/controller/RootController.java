@@ -42,11 +42,11 @@ public class RootController {
 		model.addObject("banners", resultBanners.getData());
 		
 		//Articles
-		ResultObject resultArticles = articleService.listSite();
+		ResultObject resultArticles = articleService.listSite(null);
 		model.addObject("articles", resultArticles.getData());
 		
 		//Albuns
-		ResultObject resultAlbuns = albumService.listHomePage();
+		ResultObject resultAlbuns = albumService.listHomePage(5);
 		model.addObject("albuns", resultAlbuns.getData());
 		
 		//Events
