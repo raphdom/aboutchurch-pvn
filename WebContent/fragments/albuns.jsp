@@ -4,7 +4,7 @@
 	<div class="pvn-albuns-title">Álbuns relacionados:</div>
 	<div id="foo2">    
   		<c:forEach var="album" items="${albuns}">
-			<a href="Album.jr?id=<c:out value='${album.id}'/>"><img src="getThumb.action?id=<c:out value='${album.thumbId}'/>&dataType=3&width=140&height=140&exactlySize=true"  width="140" height="140" /></a>
+			<a href="galeria/album/<c:out value='${album.id}'/>"><img src="getThumb.action?id=<c:out value='${album.thumbId}'/>&dataType=3&width=140&height=140&exactlySize=true"  width="140" height="140" /></a>
 		</c:forEach>
 		<div class="clearfix"></div>
 	</div>
