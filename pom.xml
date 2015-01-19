@@ -32,11 +32,6 @@
   	</dependency>
   	<dependency>
   		<groupId>org.springframework</groupId>
-  		<artifactId>spring-tx</artifactId>
-  		<version>3.2.8.RELEASE</version>
-  	</dependency>
-  	<dependency>
-  		<groupId>org.springframework</groupId>
   		<artifactId>spring-context</artifactId>
   		<version>3.2.8.RELEASE</version>
   	</dependency>
@@ -57,11 +52,6 @@
   	</dependency>
   	<dependency>
   		<groupId>org.springframework</groupId>
-  		<artifactId>spring-jdbc</artifactId>
-  		<version>3.2.8.RELEASE</version>
-  	</dependency>
-  	<dependency>
-  		<groupId>org.springframework</groupId>
   		<artifactId>spring-expression</artifactId>
   		<version>3.2.8.RELEASE</version>
   	</dependency>
@@ -75,49 +65,7 @@
   		<artifactId>spring-aspects</artifactId>
   		<version>3.2.8.RELEASE</version>
   	</dependency>
-  	<!-- Spring Security -->
-	<dependency>
-		<groupId>org.springframework.security</groupId>
-		<artifactId>spring-security-core</artifactId>
-		<version>3.2.1.RELEASE</version>
-	</dependency>
-
-	<dependency>
-		<groupId>org.springframework.security</groupId>
-		<artifactId>spring-security-web</artifactId>
-		<version>3.2.1.RELEASE</version>
-	</dependency>
-
-	<dependency>
-		<groupId>org.springframework.security</groupId>
-		<artifactId>spring-security-config</artifactId>
-		<version>3.2.1.RELEASE</version>
-	</dependency>
-  	<dependency>
-  		<groupId>com.fasterxml.jackson.core</groupId>
-  		<artifactId>jackson-core</artifactId>
-  		<version>2.2.3</version>
-  	</dependency>
-  	<dependency>
-  		<groupId>com.fasterxml.jackson.core</groupId>
-  		<artifactId>jackson-annotations</artifactId>
-  		<version>2.2.3</version>
-  	</dependency>
-  	<dependency>
-  		<groupId>com.fasterxml.jackson.core</groupId>
-  		<artifactId>jackson-databind</artifactId>
-  		<version>2.2.3</version>
-  	</dependency>
-  	<dependency>
-  		<groupId>com.fasterxml.jackson.datatype</groupId>
-  		<artifactId>jackson-datatype-hibernate3</artifactId>
-  		<version>2.2.3</version>
-  	</dependency>
-  	<dependency>
-  		<groupId>mysql</groupId>
-  		<artifactId>mysql-connector-java</artifactId>
-  		<version>5.1.29</version>
-  	</dependency>
+  	
   	<dependency>
   		<groupId>commons-beanutils</groupId>
   		<artifactId>commons-beanutils</artifactId>
@@ -139,15 +87,16 @@
   		<version>1.1.3</version>
   	</dependency>
   	<dependency>
+		<groupId>commons-httpclient</groupId>
+		<artifactId>commons-httpclient</artifactId>
+		<version>3.1</version>
+	</dependency>
+  	<dependency>
   		<groupId>log4j</groupId>
   		<artifactId>log4j</artifactId>
   		<version>1.2.17</version>
   	</dependency>
-  	<dependency>
-  		<groupId>org.hibernate</groupId>
-  		<artifactId>hibernate-core</artifactId>
-  		<version>3.6.10.Final</version>
-  	</dependency>
+  	
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -164,26 +113,7 @@
 		<artifactId>jstl</artifactId>
 		<version>1.2</version>
 	</dependency>
-    <dependency>
-		<groupId>javax.mail</groupId>
-		<artifactId>mail</artifactId>
-		<version>1.4</version>
-	</dependency>
-	<dependency>
-      <groupId>com.google.apis</groupId>
-      <artifactId>google-api-services-drive</artifactId>
-      <version>v2-rev145-1.19.0</version>
-    </dependency>
-    <dependency>
-		<groupId>org.apache.xmlgraphics</groupId>
-		<artifactId>batik-transcoder</artifactId>
-		<version>1.7</version>
-	</dependency>
-	<dependency>
-		<groupId>org.apache.xmlgraphics</groupId>
-		<artifactId>batik-codec</artifactId>
-		<version>1.7</version>
-	</dependency>
+    
     <dependency>
             <groupId>net.bull.javamelody</groupId>
             <artifactId>javamelody-core</artifactId>

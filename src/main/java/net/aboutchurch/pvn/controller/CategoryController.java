@@ -1,16 +1,16 @@
 package net.aboutchurch.pvn.controller;
 
+import net.aboutchurch.common.services.AlbumPublicService;
+import net.aboutchurch.common.services.ArticlePublicService;
+import net.aboutchurch.common.services.CategoryPublicService;
+import net.aboutchurch.common.to.ResultObject;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-
-import com.jrdevel.aboutus.core.common.to.ResultObject;
-import com.jrdevel.aboutus.core.site.album.AlbumService;
-import com.jrdevel.aboutus.core.site.article.ArticleService;
-import com.jrdevel.aboutus.core.site.category.CategoryService;
 
 /**
  * @author Raphael Domingues
@@ -20,28 +20,28 @@ import com.jrdevel.aboutus.core.site.category.CategoryService;
 public class CategoryController {
 	
 	@Autowired
-	private CategoryService service;
+	private CategoryPublicService categoryPublicService;
 	
 	@Autowired
-	private ArticleService articleService;
+	private ArticlePublicService articlePublicService;
 	
 	@Autowired
-	private AlbumService albumService;
+	private AlbumPublicService albumPublicService;
 	
 	@RequestMapping(value="/category.action", method = RequestMethod.GET)
 	public ModelAndView category(@RequestParam Integer id) throws Exception {
 		
 		ModelAndView model = new ModelAndView("category");
 		
-		ResultObject result = service.get(id);
+		ResultObject result = categoryPublicService.get(id);
 		
 		model.addObject("category",result.getData().get(0));
 		
-		ResultObject articles = articleService.listByCategory(id);
+		ResultObject articles = articlePublicService.listByCategory(id);
 		
 		model.addObject("articles",articles.getData());
 		
-		ResultObject albuns = albumService.listByCategory(id);
+		ResultObject albuns = albumPublicService.listByCategory(id);
 		
 		model.addObject("albuns",albuns.getData());
 		

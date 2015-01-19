@@ -4,7 +4,7 @@
 <div id="pvn-main-content-agenda-title">Agenda:</div>        
 <c:forEach var="event" items="${events}">
 	<div class="pvn-main-content-agenda-list">
-		<div class="agenda-image"><a href="Evento.jr?id=<c:out value="${event.id}"/>">
+		<div class="agenda-image"><a href="evento/<c:out value="${event.id}"/>">
 			<c:choose>
 				<c:when test="${empty event.thumbId}">
 					<img src="images/fotos/events.jpg" width="100" height="100" alt="">

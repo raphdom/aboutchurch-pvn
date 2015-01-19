@@ -2,18 +2,17 @@ package net.aboutchurch.pvn.controller;
 
 import java.util.List;
 
+import net.aboutchurch.common.dto.CategoryListDTO;
+import net.aboutchurch.common.services.AlbumPublicService;
+import net.aboutchurch.common.services.CategoryPublicService;
+import net.aboutchurch.common.to.ResultObject;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-
-import com.jrdevel.aboutus.core.common.to.ResultObject;
-import com.jrdevel.aboutus.core.site.album.AlbumService;
-import com.jrdevel.aboutus.core.site.category.CategoryListDTO;
-import com.jrdevel.aboutus.core.site.category.CategoryService;
-import com.jrdevel.aboutus.core.site.video.VideoService;
 
 /**
  * @author Raphael Domingues
@@ -23,13 +22,10 @@ import com.jrdevel.aboutus.core.site.video.VideoService;
 public class GalleryController {
 	
 	@Autowired
-	private CategoryService categoryService;
+	private CategoryPublicService categoryPublicService;
 	
 	@Autowired
-	private AlbumService albumService;
-	
-	@Autowired
-	private VideoService videoService;
+	private AlbumPublicService albumPublicService;
 	
 	
 	@RequestMapping(value="/galeria/{type}", method = RequestMethod.GET)
@@ -49,9 +45,9 @@ public class GalleryController {
 		List<CategoryListDTO> categories = null;
 		
 		if (type.equals("videos")){
-			categories = categoryService.listCategoryByParent(parent, false, true);
+			categories = categoryPublicService.listCategoryByParent(parent, false, true);
 		}else{
-			categories = categoryService.listCategoryByParent(parent, true, false);
+			categories = categoryPublicService.listCategoryByParent(parent, true, false);
 		}
 		
 		return categories;
@@ -65,7 +61,7 @@ public class GalleryController {
 		
 		modelAndView.addObject("categories", getCategoriesByParent(id,"albuns"));
 		
-		ResultObject resultObject = albumService.listByCategory(id);
+		ResultObject resultObject = albumPublicService.listByCategory(id);
 		modelAndView.addObject("albuns", resultObject.getData());
 		
 		modelAndView.addObject("type", "albuns");
@@ -92,7 +88,7 @@ public class GalleryController {
 		
 		ModelAndView modelAndView = new ModelAndView("/album");
 		
-		ResultObject resultObject = albumService.get(id);
+		ResultObject resultObject = albumPublicService.get(id);
 		
 		modelAndView.addObject("album", resultObject.getData().get(0));
 		

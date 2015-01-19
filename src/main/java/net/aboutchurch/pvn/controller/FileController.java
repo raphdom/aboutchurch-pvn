@@ -2,13 +2,13 @@ package net.aboutchurch.pvn.controller;
 
 import javax.servlet.http.HttpServletResponse;
 
+import net.aboutchurch.common.services.CloudPublicService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-
-import com.jrdevel.aboutus.core.cloud.CloudService;
 
 /**
  * @author Raphael Domingues
@@ -19,7 +19,7 @@ public class FileController {
 	
 	
 	@Autowired
-	private CloudService service;
+	private CloudPublicService cloudPublicService;
 	
 	@RequestMapping(value="/getThumb.action", method = RequestMethod.GET)
 	public void get(@RequestParam Integer id, 
@@ -32,9 +32,9 @@ public class FileController {
 		byte[] fileByteArray = null;
 		
 		if(width != null && width > 0){
-			fileByteArray = service.getThumb(id, width, height, exactlySize);
+			fileByteArray = cloudPublicService.getThumb(id, width, height, exactlySize);
 		}else{
-			fileByteArray = service.getThumb(id, dataType);
+			fileByteArray = cloudPublicService.getThumb(id, dataType);
 		}
 
 		if (fileByteArray != null && fileByteArray.length > 0){

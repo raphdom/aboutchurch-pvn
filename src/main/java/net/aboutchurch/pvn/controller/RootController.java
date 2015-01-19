@@ -1,16 +1,16 @@
 package net.aboutchurch.pvn.controller;
 
+import net.aboutchurch.common.services.AlbumPublicService;
+import net.aboutchurch.common.services.ArticlePublicService;
+import net.aboutchurch.common.services.BannerPublicService;
+import net.aboutchurch.common.services.EventPublicService;
+import net.aboutchurch.common.to.ResultObject;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-
-import com.jrdevel.aboutus.core.calendar.EventService;
-import com.jrdevel.aboutus.core.common.to.ResultObject;
-import com.jrdevel.aboutus.core.site.album.AlbumService;
-import com.jrdevel.aboutus.core.site.article.ArticleService;
-import com.jrdevel.aboutus.core.site.banner.BannerService;
 
 /**
  * @author Raphael Domingues
@@ -21,36 +21,35 @@ import com.jrdevel.aboutus.core.site.banner.BannerService;
 public class RootController {
 	
 	@Autowired
-	private ArticleService articleService;
+	private ArticlePublicService articlePublicService;
 	
 	@Autowired
-	private BannerService bannerService;
+	private BannerPublicService bannerPublicService;
 	
 	@Autowired
-	private AlbumService albumService;
+	private AlbumPublicService albumPublicService;
 	
 	@Autowired
-	private EventService eventService;
+	private EventPublicService eventPublicService;
 	
 	@RequestMapping(method=RequestMethod.GET)
 	public ModelAndView index(){
 		
 		ModelAndView model = new ModelAndView("index");
-		
 		//Banners
-		ResultObject resultBanners = bannerService.listHomePage();
+		ResultObject resultBanners = bannerPublicService.list(null);
 		model.addObject("banners", resultBanners.getData());
 		
 		//Articles
-		ResultObject resultArticles = articleService.listSite(null);
+		ResultObject resultArticles = articlePublicService.list(null);
 		model.addObject("articles", resultArticles.getData());
 		
 		//Albuns
-		ResultObject resultAlbuns = albumService.listHomePage(5);
+		ResultObject resultAlbuns = albumPublicService.list(5);
 		model.addObject("albuns", resultAlbuns.getData());
 		
 		//Events
-		ResultObject resultEvents = eventService.listHomePage();
+		ResultObject resultEvents = eventPublicService.list(null);
 		model.addObject("events", resultEvents.getData());
 		
 		return model;

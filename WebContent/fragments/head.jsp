@@ -1,6 +1,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<title>::Projeto Vida Nova Europa::</title>
+	<link rel="SHORTCUT ICON" href="${pageContext.request.contextPath}/images/icone.ico">
 
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/pvn.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/superfish.css">

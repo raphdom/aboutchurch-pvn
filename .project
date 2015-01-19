@@ -3,7 +3,7 @@
 	<name>aboutchurch-pvn</name>
 	<comment></comment>
 	<projects>
-		<project>aboutus-core</project>
+		<project>aboutchurch-common</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

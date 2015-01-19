@@ -42,6 +42,7 @@
 		  <ul>
 		     <li><a href="${pageContext.request.contextPath}/category.action?id=21">pastoral</a></li>
 		     <li><a href="${pageContext.request.contextPath}/category.action?id=22">social</a></li>
+		     <li><a href="${pageContext.request.contextPath}/category.action?id=36">artigos</a></li>
 		  </ul>
 		</li>
 		<li><a href="#"><span></span>contatos</a>

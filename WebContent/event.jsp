@@ -27,7 +27,7 @@
 				<fmt:formatDate type="time" timeStyle="short" value="${eventRecurrence.end}"/>
 			</div>
 			<div class="onde">Onde: <c:out value="${event.loc}"/></div>
-			<div class="cont_artigo"><c:out value="${event.notes}"/></div>
+			<div class="cont_artigo"><c:out value="${event.notes}" escapeXml="false"/></div>
 		</div>
 		<jsp:include page="fragments/footer.jsp" />
 	</body>

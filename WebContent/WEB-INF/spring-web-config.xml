@@ -19,5 +19,63 @@ http://www.springframework.org/schema/util http://www.springframework.org/schema
 	
 	<mvc:resources mapping="/**" location="/" />
 	
+	<!-- PUBLIC SERVICES -->
+	
+	<bean id="articlePublicService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">  
+    	<property name="serviceUrl" value="http://localhost/aboutchurch/articlePublicService.http"></property>  
+    	<property name="serviceInterface" value="net.aboutchurch.common.services.ArticlePublicService"></property>
+    	<property name="httpInvokerRequestExecutor">
+    		<bean class="net.aboutchurch.util.AboutChurchHttpInvokerRequestExecutor"  />
+  		</property>
+	</bean>
+	
+	<bean id="bannerPublicService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">  
+    	<property name="serviceUrl" value="http://localhost/aboutchurch/bannerPublicService.http"></property>  
+    	<property name="serviceInterface" value="net.aboutchurch.common.services.BannerPublicService"></property>
+    	<property name="httpInvokerRequestExecutor">
+    		<bean class="net.aboutchurch.util.AboutChurchHttpInvokerRequestExecutor"  />
+  		</property>
+	</bean>
+	
+	<bean id="albumPublicService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">  
+    	<property name="serviceUrl" value="http://localhost/aboutchurch/albumPublicService.http"></property>  
+    	<property name="serviceInterface" value="net.aboutchurch.common.services.AlbumPublicService"></property>
+    	<property name="httpInvokerRequestExecutor">
+    		<bean class="net.aboutchurch.util.AboutChurchHttpInvokerRequestExecutor"  />
+  		</property>
+	</bean>
+	
+	<bean id="eventPublicService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">  
+    	<property name="serviceUrl" value="http://localhost/aboutchurch/eventPublicService.http"></property>  
+    	<property name="serviceInterface" value="net.aboutchurch.common.services.EventPublicService"></property>
+    	<property name="httpInvokerRequestExecutor">
+    		<bean class="net.aboutchurch.util.AboutChurchHttpInvokerRequestExecutor"  />
+  		</property>
+	</bean>
+	
+	<bean id="categoryPublicService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">  
+    	<property name="serviceUrl" value="http://localhost/aboutchurch/categoryPublicService.http"></property>  
+    	<property name="serviceInterface" value="net.aboutchurch.common.services.CategoryPublicService"></property>
+    	<property name="httpInvokerRequestExecutor">
+    		<bean class="net.aboutchurch.util.AboutChurchHttpInvokerRequestExecutor"  />
+  		</property>
+	</bean>
+	
+	<bean id="videoPublicService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">  
+    	<property name="serviceUrl" value="http://localhost/aboutchurch/videoPublicService.http"></property>  
+    	<property name="serviceInterface" value="net.aboutchurch.common.services.VideoPublicService"></property>
+    	<property name="httpInvokerRequestExecutor">
+    		<bean class="net.aboutchurch.util.AboutChurchHttpInvokerRequestExecutor"  />
+  		</property>
+	</bean>
+	
+	<bean id="cloudPublicService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">  
+    	<property name="serviceUrl" value="http://localhost/aboutchurch/cloudPublicService.http"></property>  
+    	<property name="serviceInterface" value="net.aboutchurch.common.services.CloudPublicService"></property>
+    	<property name="httpInvokerRequestExecutor">
+    		<bean class="net.aboutchurch.util.AboutChurchHttpInvokerRequestExecutor"  />
+  		</property>
+	</bean>
+	
 
 </beans>
