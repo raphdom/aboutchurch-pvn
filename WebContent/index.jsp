@@ -37,19 +37,19 @@
 				<div class="pvn-inner-title-banner"><span>Testemunhos</span></div>
 				<div class="pvn-inner-image-banner"><img src="images/fotos/testemunho.jpg" width="230" height="150" alt="Testemunhos"></div>
 				<div class="pvn-inner-text-banner">Os médicos disseram "não tem jeito" mas a Mão de Deus curou o bébé que ainda estava no meu ventre. O Senhor seja louvado.</div>
-				<a href="Categoria.jr?id=23"><div class="pvn-button">Mais informacões</div></a>
+				<a href="category.action?id=23"><div class="pvn-button">Mais informacões</div></a>
 			</div>
 			<div class = "pvn-inner-content-banner">
-				<div class="pvn-inner-title-banner"><span>PCAAC- Projeto Social</span></div>
+				<div class="pvn-inner-title-banner"><span>FEAC- Projeto Social</span></div>
 				<div class="pvn-inner-image-banner"><img src="images/fotos/pcaac.jpg" width="230" height="150" alt="PCAAC - Projeto Social"></div>
 				<div class="pvn-inner-text-banner">Em parceria com outras instituições sociais apoiamos várias  famílias sendo mediadores na entrega de alimentos.</div>
-				<a href="Categoria.jr?id=24"><div class="pvn-button">Mais informacões</div></a>
+				<a href="category.action?id=24"><div class="pvn-button">Mais informacões</div></a>
 			</div>
 			<div class = "pvn-inner-content-banner">
 				<div class="pvn-inner-title-banner"><span>Semear</span></div>
 				<div class="pvn-inner-image-banner"><img src="images/fotos/semear.jpg" width="230" height="150" alt="Image 1"></div>
 				<div class="pvn-inner-text-banner"><i>"Jesus disse: Escutem! Certo homem saiu para semear"</i>  Mc. 4:3 - Seja você também um semeador em terra fértil</div>
-				<a href="Artigo.jr?id=44"><div class="pvn-button">Mais informacões</div></a>
+				<a href="article.action?id=44"><div class="pvn-button">Mais informacões</div></a>
 			</div>
 		</div>
 		<div id="pvn-main-content">
